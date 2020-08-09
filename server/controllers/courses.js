@@ -9,7 +9,7 @@
 */
 var Joi = require("joi");
 const express = require('express');
-//Route() replaces app this allows us to to use differnt routes
+//Route() replaces app this allows us to to use differnt routes  
 const router = express.Router();
 
 const courses = [
