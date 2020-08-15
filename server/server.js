@@ -1,7 +1,7 @@
 var config = require("../config.js");
 const express = require("express");
 const app = express();
-const courses = require('./controllers/courses.js')
+const courses = require('./controllers/courses.js');
 app.use(express.json());
 app.use("/api/courses", courses);
 

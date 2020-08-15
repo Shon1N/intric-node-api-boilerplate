@@ -1,4 +1,5 @@
-const portNumber = 3000,l;;
+const portNumber = process.env.PORT;
+//TODO: Confirm the port number of the database
 const dbPortNumber = 27017;
 const dbName = '';
 const homeRoot = 'http://localhost:' + portNumber ;

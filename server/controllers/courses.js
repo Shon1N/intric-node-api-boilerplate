@@ -9,14 +9,10 @@
 */
 var Joi = require("joi");
 const express = require('express');
-//Route() replaces app this allows us to to use differnt routes  
+//Route() replaces app this allows us to to use differnt routes
 const router = express.Router();
-
-const courses = [
-    {id: 1, name: "node"},
-    {id: 2, name: "flutter"},
-    {id: 3, name: "html5"}
-]
+//Get data
+var courses = require("../models/courses.js");
 
 //Fetch all the data since there are not parameters
 router.get('/', (req, res) =>{
@@ -60,7 +56,7 @@ router.post('/', (req, res) =>{
   //Update data to the database/server
     router.put('/', (req, res) =>{
 
-        console.log("hello", req.body.id)
+        console.log("update", req.body.id)
         const course =  courses.find(c => c.id == parseInt(req.body.id));
         if(!course)
         res.status(404).send('course not found...');
@@ -100,4 +96,4 @@ function validateCourse(course){
         return Joi.validate(course, schema);
 }
 
-  module.exports = router
+  module.exports = router;
